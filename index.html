@@ -136,40 +136,54 @@
     </p>
   </div>
 
-  <script>
-    // Toggle password visibility
-    document.querySelector('.toggle-password').addEventListener('click', function() {
-      const passwordInput = document.getElementById('password');
-      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
-      passwordInput.setAttribute('type', type);
-      this.classList.toggle('fa-eye-slash');
-      this.classList.toggle('fa-eye');
-    });
-    
-    // Login button functionality
-    document.querySelector('.login-btn').addEventListener('click', function() {
-      const email = document.getElementById('email').value;
-      const password = document.getElementById('password').value;
-      
-      if (email && password) {
-        window.location.href = 'dashboard.html';
-      } else {
-        alert('Please enter both email and password');
-      }
-    });
-
-    if ('serviceWorker' in navigator) {
-  window.addEventListener('load', () => {
-    navigator.serviceWorker.register('service-worker.js')
-      .then(reg => console.log('Service Worker Registered', reg))
-      .catch(err => console.log('Service Worker registration failed', err));
+<script>
+  // Toggle password visibility
+  document.querySelector('.toggle-password').addEventListener('click', function() {
+    const passwordInput = document.getElementById('password');
+    const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+    passwordInput.setAttribute('type', type);
+    this.classList.toggle('fa-eye-slash');
+    this.classList.toggle('fa-eye');
   });
-}
 
-  </script>
+  // Check login status on page load
+  window.addEventListener("load", () => {
+    const loggedIn = localStorage.getItem("loggedIn");
+    if (loggedIn === "true") {
+      // Already logged in → skip login page
+      window.location.href = "dashboard.html";
+    }
+  });
+
+  // Login button functionality
+  document.querySelector('.login-btn').addEventListener('click', function() {
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    if (email && password) {
+      // Save login status
+      localStorage.setItem("loggedIn", "true");
+      localStorage.setItem("userEmail", email); // optional: store email
+      window.location.href = 'dashboard.html';
+    } else {
+      alert('Please enter both email and password');
+    }
+  });
+
+  // Service Worker for PWA
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('service-worker.js')
+        .then(reg => console.log('Service Worker Registered', reg))
+        .catch(err => console.log('Service Worker registration failed', err));
+    });
+  }
+</script>
+
 </body>
 
 </html>
+
 
 
 
