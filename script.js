@@ -95,5 +95,14 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+document.getElementById("logoutLink").addEventListener("click", (e) => {
+  e.preventDefault();
+  localStorage.setItem("loggedIn", "false"); // make sure it's set to false
+  localStorage.removeItem("userEmail"); 
+  window.location.href = "index.html"; // go back to login page
+});
+
+
+
 
 
