@@ -146,12 +146,12 @@
     this.classList.toggle('fa-eye');
   });
 
-window.addEventListener("load", () => {
-  const loggedIn = localStorage.getItem("loggedIn");
-  if (loggedIn === "true") {
-    window.location.href = "dashboard.html";
+window.addEventListener("DOMContentLoaded", () => {
+  if (localStorage.getItem("loggedIn") === "true") {
+    window.location.href = "dashboard.html"; // only go if logged in
   }
 });
+
 
 
 
@@ -186,6 +186,7 @@ document.querySelector('.login-btn').addEventListener('click', function() {
 </body>
 
 </html>
+
 
 
 
