@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Monthly Report</title>
+  <link rel="stylesheet" href="monthly.css">
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <!-- Three-dot toggle button -->
+<div id="sidebarToggle">⋮</div>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <ul>
+    <br>
+    <br>
+    <li><a href="#">Profile</a></li>
+    <li><a href="dashboard.html">Dashboard</a></li>
+    <li><a href="daily.html">Daily Report</a></li>
+  </ul>
+</div>
+
+  <!-- Main content -->
+  <div class="main-content">
+    <h1>Monthly Report (20 Aug 2025 - 20 Sep 2025)</h1>
+
+    <div class="report-container">
+      <!-- Table -->
+      <div class="table-container">
+        <table id="monthlyTable">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Avg Temperature (°C)</th>
+              <th>Avg IR Sensor</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+
+      <!-- Chart -->
+      <div class="chart-container">
+        <canvas id="monthlyChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="monthly.js"></script>
+</body>
+</html>

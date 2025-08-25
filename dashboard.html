@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sensor Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+
+
+  <!-- Three-dot toggle button -->
+<div id="sidebarToggle">⋮</div>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+  <ul>
+    <br>
+    <br>
+    <li><a href="#">Profile</a></li>
+    <li><a href="daily.html">Daily Report</a></li>
+    <li><a href="monthly.html">Monthly Report</a></li>
+  </ul>
+</div>
+
+
+  <!-- Main content -->
+  <div class="main-content">
+
+    <section class="cards" id="cardsSection">
+      <div class="card" id="tempCard">
+        <h2>Temperature (°C)</h2>
+        <p id="temp">--</p>
+      </div>
+      <div class="card" id="irCard">
+        <h2>IR Sensor</h2>
+        <p id="ir">--</p>
+      </div>
+    </section>
+
+    <section class="dashboard" id="dashboardSection">
+      <div class="table-container">
+        <table id="sensorTable">
+          <thead>
+            <tr>
+              <th>Time</th>
+              <th>Temperature (°C)</th>
+              <th>IR Sensor</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="chart-container">
+        <canvas id="combinedChart"></canvas>
+      </div>
+    </section>
+  </div>
+
+  <audio id="alarmSound" src="alarm.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>

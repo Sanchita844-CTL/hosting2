@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Modal test</title>
+  <style>
+    #alert-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 10000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #alert-box {
+      background: #fff;
+      padding: 24px;
+      border-radius: 10px;
+      width: min(90vw, 420px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      text-align: center;
+    }
+    #alert-box h2 {
+      color: #dc3545;
+    }
+    #close-alert {
+      padding: 10px 18px;
+      border: none;
+      background: #dc3545;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="openBtn">Open Modal</button>
+
+  <div id="alert-modal" aria-hidden="true">
+    <div id="alert-box" role="dialog" aria-modal="true" aria-labelledby="alert-title">
+      <h2 id="alert-title">⚠ Alert!</h2>
+      <p id="alert-message">Test alert message</p>
+      <button id="close-alert" aria-label="Close alert">OK</button>
+    </div>
+  </div>
+
+  <script>
+    const alertModal = document.getElementById("alert-modal");
+    const closeAlertBtn = document.getElementById("close-alert");
+    const openBtn = document.getElementById("openBtn");
+
+    openBtn.onclick = () => {
+      alertModal.style.display = "flex";
+      alertModal.setAttribute("aria-hidden", "false");
+    };
+
+    closeAlertBtn.onclick = () => {
+      alertModal.style.display = "none";
+      alertModal.setAttribute("aria-hidden", "true");
+    };
+
+    alertModal.onclick = e => {
+      if (e.target === alertModal) {
+        alertModal.style.display = "none";
+        alertModal.setAttribute("aria-hidden", "true");
+      }
+    };
+  </script>
+</body>
+</html>

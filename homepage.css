@@ -1,0 +1,132 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  position: relative;
+  color: white;
+  background: url('assets/fish_produce.jpg') no-repeat center center/cover;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.logo img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: bold;
+  text-align: center;
+  color: white;
+  letter-spacing: 2px;
+  font-family: 'Roboto', cursive;
+}
+
+.input-section {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+input {
+  padding: 12px 15px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  width: 250px;
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+#loginBtn {
+  padding: 12px 25px;
+  background: #6174e2;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+.signup-text {
+  font-size: 16px;
+  color: white;
+}
+
+.signup-text a {
+  color: white;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Add to your existing CSS */
+.password-wrapper {
+  position: relative;
+  width: 250px;
+}
+
+.password-wrapper input {
+  width: 100%;
+  padding-right: 35px; /* Space for eye icon */
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  color: #777;
+}
+
+.toggle-password:hover {
+  color: #333;
+}
+
+.logo {
+  display: flex;
+  align-items: center; /* vertically center the text with the logo */
+  gap: 10px; /* space between logo and text */
+}
+
+.logo img {
+  width: 50px; /* adjust size as needed */
+  height: auto;
+}
+
+.logo-title {
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.5rem; /* adjust size */
+  font-weight: 700;
+  color: #ffffff; /* change color if needed */
+}
