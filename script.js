@@ -103,13 +103,14 @@ window.addEventListener("load", () => {
   }
 });
 
-// Logout button
 document.getElementById("logoutLink").addEventListener("click", (e) => {
   e.preventDefault();
-  localStorage.setItem("loggedIn", "false");
+  localStorage.removeItem("loggedIn"); // better than setting "false"
   localStorage.removeItem("userEmail");
   window.location.href = "index.html";
 });
+
+
 
 
 
