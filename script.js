@@ -95,12 +95,23 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+// Redirect to login if not logged in
+window.addEventListener("load", () => {
+  const loggedIn = localStorage.getItem("loggedIn");
+  if (loggedIn !== "true") {
+    window.location.href = "index.html";
+  }
+});
+
+// Logout button
 document.getElementById("logoutLink").addEventListener("click", (e) => {
   e.preventDefault();
-  localStorage.setItem("loggedIn", "false"); // make sure it's set to false
-  localStorage.removeItem("userEmail"); 
-  window.location.href = "index.html"; // go back to login page
+  localStorage.setItem("loggedIn", "false");
+  localStorage.removeItem("userEmail");
+  window.location.href = "index.html";
 });
+
+
 
 
 
