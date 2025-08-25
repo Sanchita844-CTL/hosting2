@@ -146,14 +146,15 @@
     this.classList.toggle('fa-eye');
   });
 
-  // Check login status on page load
+// Check login status on page load
 window.addEventListener("load", () => {
   const loggedIn = localStorage.getItem("loggedIn");
-  // Only redirect if loggedIn is exactly "true"
   if (loggedIn === "true") {
+    // User is already logged in, redirect to dashboard
     window.location.href = "dashboard.html";
   }
 });
+
 
 
 
@@ -185,6 +186,7 @@ window.addEventListener("load", () => {
 </body>
 
 </html>
+
 
 
 
