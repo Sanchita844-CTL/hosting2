@@ -1,10 +1,10 @@
 {
-  "name": "Event Tracker",
-  "short_name": "Tracker",
-  "start_url": "/index.html",
+  "name": "Aquaculture App",
+  "short_name": "Aquaculture",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#ffffff",
-  "theme_color": "#0d6efd",
+  "theme_color": "#0077b6",
   "icons": [
     {
       "src": "icon-192.png",
