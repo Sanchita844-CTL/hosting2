@@ -147,13 +147,13 @@
   });
 
   // Check login status on page load
-  window.addEventListener("load", () => {
-    const loggedIn = localStorage.getItem("loggedIn");
-    if (loggedIn === "true") {
-      // Already logged in → skip login page
-      window.location.href = "dashboard.html";
-    }
-  });
+window.addEventListener("load", () => {
+  const loggedIn = localStorage.getItem("loggedIn");
+  if (loggedIn && loggedIn === "true") {
+    window.location.href = "dashboard.html";
+  }
+});
+
 
   // Login button functionality
   document.querySelector('.login-btn').addEventListener('click', function() {
@@ -183,6 +183,7 @@
 </body>
 
 </html>
+
 
 
 
