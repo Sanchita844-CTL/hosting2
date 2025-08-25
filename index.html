@@ -149,10 +149,12 @@
   // Check login status on page load
 window.addEventListener("load", () => {
   const loggedIn = localStorage.getItem("loggedIn");
-  if (loggedIn && loggedIn === "true") {
+  // Only redirect if loggedIn is exactly "true"
+  if (loggedIn === "true") {
     window.location.href = "dashboard.html";
   }
 });
+
 
 
   // Login button functionality
@@ -183,6 +185,7 @@ window.addEventListener("load", () => {
 </body>
 
 </html>
+
 
 
 
