@@ -96,19 +96,20 @@ if ('serviceWorker' in navigator) {
 }
 
 // Redirect to login if not logged in
-window.addEventListener("load", () => {
-  const loggedIn = localStorage.getItem("loggedIn");
-  if (loggedIn !== "true") {
-    window.location.href = "index.html";
-  }
-});
+//window.addEventListener("load", () => {
+  //const loggedIn = localStorage.getItem("loggedIn");
+  //if (loggedIn !== "true") {
+    //window.location.href = "index.html";
+  //}
+//});
 
 document.getElementById("logoutLink").addEventListener("click", (e) => {
   e.preventDefault();
-  localStorage.removeItem("loggedIn"); // better than setting "false"
-  localStorage.removeItem("userEmail");
-  window.location.href = "index.html";
+  localStorage.removeItem("loggedIn"); // clear login
+  window.location.href = "index.html"; // back to login page
 });
+
+
 
 
 
