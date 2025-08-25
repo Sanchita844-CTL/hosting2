@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aquaculture Sign Up</title>
+  <link rel="stylesheet" href="homepage.css">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <div class="overlay">
+    <div class="logo">
+      <img src="logo.png" alt="Logo">
+      <span class="logo-title">Celestial Tech Ltd</span>
+    </div>
+
+
+    <div class="container">
+      <div class="content-box">
+        <h1>CREATE ACCOUNT</h1>
+        <div class="input-section">
+          <input type="text" placeholder="FULL NAME" id="fullname">
+          <input type="email" placeholder="EMAIL" id="signupEmail">
+          <div class="password-wrapper">
+            <input type="password" placeholder="PASSWORD" id="signupPassword">
+            <i class="fas fa-eye-slash toggle-password"></i>
+          </div>
+          <div class="password-wrapper">
+            <input type="password" placeholder="CONFIRM PASSWORD" id="confirmPassword">
+            <i class="fas fa-eye-slash toggle-password"></i>
+          </div>
+        </div>
+        <p class="signup-text">
+          Already have an account? <a href="index.html">SIGN IN</a>
+        </p>
+        <button id="signupBtn">SIGN UP</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="signup.js"></script>
+</body>
+</html>
