@@ -159,19 +159,20 @@ window.addEventListener("load", () => {
 
 
   // Login button functionality
-  document.querySelector('.login-btn').addEventListener('click', function() {
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
+document.querySelector('.login-btn').addEventListener('click', function() {
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
 
-    if (email && password) {
-      // Save login status
-      localStorage.setItem("loggedIn", "true");
-      localStorage.setItem("userEmail", email); // optional: store email
-      window.location.href = 'dashboard.html';
-    } else {
-      alert('Please enter both email and password');
-    }
-  });
+  if (email && password) {
+    // Save login status
+    localStorage.setItem("loggedIn", "true");
+    localStorage.setItem("userEmail", email); // optional
+    window.location.href = 'dashboard.html';
+  } else {
+    alert('Please enter both email and password');
+  }
+});
+
 
   // Service Worker for PWA
   if ('serviceWorker' in navigator) {
@@ -186,6 +187,7 @@ window.addEventListener("load", () => {
 </body>
 
 </html>
+
 
 
 
