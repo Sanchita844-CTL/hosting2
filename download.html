@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Sensor Data (CSV)</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Firebase (Realtime DB) -->
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Download Temp & IR Data</h1>
+    <p>Select a date range to export readings as CSV</p>
+
+    <div class="card">
+      <div class="row">
+        <div>
+          <label for="start-date">Start Date</label>
+          <input id="start-date" type="date">
+        </div>
+        <div>
+          <label for="end-date">End Date</label>
+          <input id="end-date" type="date">
+        </div>
+        <div class="btn-area">
+          <button id="download-csv">Download CSV</button>
+        </div>
+      </div>
+      <p class="hint">Tip: Select same date for both fields to export one day</p>
+    </div>
+
+    <div id="preview"></div>
+  </div>
+
+  <!-- JS -->
+  <script src="download.js"></script>
+</body>
+</html>
