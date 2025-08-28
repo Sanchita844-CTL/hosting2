@@ -14,7 +14,7 @@
 </head>
 <body>
   <div class="container">
-    <h1>Download Temp & IR Data</h1>
+    <h1>📥 Download Temp & IR Data</h1>
     <p>Select a date range to export readings as CSV</p>
 
     <div class="card">
@@ -31,9 +31,29 @@
           <button id="download-csv">Download CSV</button>
         </div>
       </div>
+      <p class="hint">You can preview up to 20 rows below before downloading.</p>
     </div>
 
-    <div id="preview"></div>
+    <!-- Preview Table -->
+    <div id="preview" class="card"></div>
+
+    <!-- Download History -->
+    <div class="card">
+      <h2>📑 Download History</h2>
+      <table id="history-table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>File Name</th>
+            <th>Date</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- History rows will be added dynamically -->
+        </tbody>
+      </table>
+    </div>
   </div>
 
   <!-- JS -->
