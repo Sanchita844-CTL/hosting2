@@ -1,4 +1,3 @@
-// -------------------- Firebase config (replace with your own) --------------------
 const firebaseConfig = {
   apiKey: "AIzaSyDszlLsqxjEahtzDzvxQSAN5Rsa1nLEXCI",
   authDomain: "tempval-6f873.firebaseapp.com",
@@ -10,11 +9,9 @@ const firebaseConfig = {
   measurementId: "G-2LMGE920EF"
 };
 
-// Init Firebase
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
-// -------------------- Helpers --------------------
 function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
 function dateFromInputStr(s, endOfDay = false) {
@@ -35,7 +32,6 @@ function csvEscape(v) {
   return v;
 }
 
-// -------------------- Fetch Data --------------------
 async function fetchSensorData(startDate, endDate) {
   const snapshot = await database.ref("/sensor_data").once("value");
   if (!snapshot.exists()) return [];
@@ -61,7 +57,6 @@ async function fetchSensorData(startDate, endDate) {
   return results;
 }
 
-// -------------------- CSV --------------------
 function downloadCSV(rows, filename) {
   if (!rows.length) {
     alert("No data found.");
@@ -86,9 +81,26 @@ function downloadCSV(rows, filename) {
   a.click();
   a.remove();
   URL.revokeObjectURL(url);
+
+  addToHistory(filename);
 }
 
-// -------------------- UI --------------------
+function addToHistory(filename) {
+  const tbody = document.querySelector("#history-table tbody");
+  const now = new Date();
+  const date = `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(now.getDate())}`;
+  const time = `${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+
+  const row = document.createElement("tr");
+  row.innerHTML = `
+    <td>${tbody.children.length + 1}</td>
+    <td>${filename}</td>
+    <td>${date}</td>
+    <td>${time}</td>
+  `;
+  tbody.prepend(row);
+}
+
 document.getElementById("download-csv").addEventListener("click", async () => {
   const startStr = document.getElementById("start-date").value;
   const endStr = document.getElementById("end-date").value;
@@ -103,7 +115,6 @@ document.getElementById("download-csv").addEventListener("click", async () => {
 
   const rows = await fetchSensorData(start, end);
 
-  // Preview
   const preview = document.getElementById("preview");
   if (!rows.length) {
     preview.innerHTML = "<p>No data found in range.</p>";
