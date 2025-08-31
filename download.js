@@ -12,6 +12,14 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const database = firebase.database();
 
+// ===== Sidebar toggle =====
+const sidebar = document.getElementById('sidebar');
+const toggleBtn = document.getElementById('sidebarToggle');
+
+toggleBtn.addEventListener('click', () => {
+  sidebar.classList.toggle('active');
+});
+
 function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
 function dateFromInputStr(s, endOfDay = false) {
