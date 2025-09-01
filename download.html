@@ -13,26 +13,25 @@
   <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-database-compat.js"></script>
 </head>
 <body>
-     <!-- Three-dot toggle button -->
-<div id="sidebarToggle">⋮</div>
+  <!-- Sidebar Toggle -->
+  <div id="sidebarToggle">⋮</div>
 
-<!-- Sidebar -->
-<div class="sidebar" id="sidebar">
-  <ul>
-    <br>
-    <br>
-    <li><a href="#">Profile</a></li>
-    <li><a href="daily.html">Daily Report</a></li>
-    <li><a href="monthly.html">Monthly Report</a></li>
-    <li><a href="dashboard.html">Dashboard</a></li>
-    <li><a href="#" id="logoutLink">LOGOUT</a></li>
-  </ul>
-</div>
-  
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="#">Profile</a></li>
+      <li><a href="daily.html">Daily Report</a></li>
+      <li><a href="monthly.html">Monthly Report</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="#" id="logoutLink">LOGOUT</a></li>
+    </ul>
+  </div>
+
   <div class="container">
     <h1>Download Temp & IR Data</h1>
     <p>Select a date range to export readings as CSV</p>
 
+    <!-- Date Selection Card -->
     <div class="card">
       <div class="row">
         <div>
@@ -43,16 +42,16 @@
           <label for="end-date">End Date</label>
           <input id="end-date" type="date">
         </div>
-        <div class="btn-area">
-          <button id="download-csv">Download CSV</button>
-        </div>
+      </div>
+      <div class="btn-area">
+        <button id="download-csv">Download CSV</button>
       </div>
     </div>
 
-    <!-- Preview Table -->
+    <!-- Preview Table Card -->
     <div id="preview" class="card"></div>
 
-    <!-- Download History -->
+    <!-- Download History Card -->
     <div class="card">
       <h2>Download History</h2>
       <table id="history-table">
@@ -65,7 +64,7 @@
           </tr>
         </thead>
         <tbody>
-          <!-- History rows will be added dynamically -->
+          <!-- History rows dynamically added -->
         </tbody>
       </table>
     </div>
