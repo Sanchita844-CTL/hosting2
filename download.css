@@ -36,10 +36,11 @@ body {
   padding: 20px;
   border-radius: 12px;
   box-shadow: var(--shadow);
-  margin-bottom: 24px;
   width: 100%;
   max-width: 700px;
-  text-align: center; /* center text inside card */
+  margin: 20px auto; /* centers the card */
+  text-align: center;
+
 }
 
 /* Row input alignment */
@@ -47,8 +48,10 @@ body {
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
-  justify-content: center; /* center the inputs */
+  justify-content: center; /* ensures inputs/buttons are centered */
+  align-items: center;     /* vertically center items */
 }
+
 
 .row > div {
   flex: 1 1 150px;
@@ -58,10 +61,11 @@ body {
 /* Button center */
 .btn-area {
   display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  flex: 1 1 100px;
+  justify-content: center; /* centers the button */
+  align-items: center;
+  width: 100%;
 }
+
 
 button {
   background: var(--accent);
@@ -105,9 +109,14 @@ tr:hover td {
 }
 
 /* Preview table */
-#preview table {
-  margin: 0 auto;
+#preview {
+  text-align: center; /* centers the content inside preview card */
 }
+
+#preview table {
+  margin: 0 auto; /* horizontally centers the table */
+}
+
 
 /* Sidebar */
 
