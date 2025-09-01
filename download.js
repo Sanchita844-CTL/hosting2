@@ -20,6 +20,7 @@ toggleBtn.addEventListener('click', () => {
   sidebar.classList.toggle('active');
 });
 
+// ===== Utility functions =====
 function pad(n) { return n < 10 ? '0' + n : '' + n; }
 
 function dateFromInputStr(s, endOfDay = false) {
@@ -40,6 +41,7 @@ function csvEscape(v) {
   return v;
 }
 
+// ===== Fetch data from Firebase =====
 async function fetchSensorData(startDate, endDate) {
   const snapshot = await database.ref("/sensor_data").once("value");
   if (!snapshot.exists()) return [];
@@ -65,6 +67,7 @@ async function fetchSensorData(startDate, endDate) {
   return results;
 }
 
+// ===== Download CSV =====
 function downloadCSV(rows, filename) {
   if (!rows.length) {
     alert("No data found.");
@@ -93,6 +96,7 @@ function downloadCSV(rows, filename) {
   addToHistory(filename);
 }
 
+// ===== Add to history table =====
 function addToHistory(filename) {
   const tbody = document.querySelector("#history-table tbody");
   const now = new Date();
@@ -109,6 +113,7 @@ function addToHistory(filename) {
   tbody.prepend(row);
 }
 
+// ===== Button Click =====
 document.getElementById("download-csv").addEventListener("click", async () => {
   const startStr = document.getElementById("start-date").value;
   const endStr = document.getElementById("end-date").value;
