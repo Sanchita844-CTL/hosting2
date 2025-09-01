@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: system-ui, sans-serif; /* or Arial if you prefer */
+  font-family: system-ui, sans-serif;
   background: var(--bg);
   margin: 0;
   padding: 30px;
@@ -16,9 +16,7 @@ body {
   justify-content: center;
   align-items: flex-start;
   min-height: 100vh;
-  transition: all 0.3s ease;
 }
-
 
 /* Container centered */
 .container {
@@ -30,17 +28,28 @@ body {
   align-items: center;
 }
 
+/* Headings */
+.container h1 {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.container p {
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
 /* Cards */
 .card {
   background: var(--card);
   padding: 20px;
   border-radius: 12px;
   box-shadow: var(--shadow);
+  margin-bottom: 24px;
   width: 100%;
   max-width: 700px;
-  margin: 20px auto; /* centers the card */
   text-align: center;
-
 }
 
 /* Row input alignment */
@@ -48,30 +57,30 @@ body {
   display: flex;
   gap: 18px;
   flex-wrap: wrap;
-  justify-content: center; /* ensures inputs/buttons are centered */
-  align-items: center;     /* vertically center items */
+  justify-content: center; /* center inputs horizontally */
+  margin-bottom: 15px;
 }
-
 
 .row > div {
   flex: 1 1 150px;
   min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 /* Button center */
 .btn-area {
   display: flex;
-  justify-content: center; /* centers the button */
-  align-items: center;
-  width: 100%;
+  justify-content: center;
+  margin-top: 10px;
 }
-
 
 button {
   background: var(--accent);
   color: #fff;
   border: none;
-  padding: 10px 18px;
+  padding: 10px 20px;
   border-radius: 8px;
   cursor: pointer;
   font-weight: 600;
@@ -95,7 +104,7 @@ th, td {
   padding: 10px;
   border-bottom: 1px solid #f1f5f9;
   font-size: 14px;
-  text-align: center; /* center table data */
+  text-align: center;
 }
 
 th {
@@ -108,19 +117,12 @@ tr:hover td {
   background: #f3f4f6;
 }
 
-/* Preview table */
-#preview {
-  text-align: center; /* centers the content inside preview card */
-}
-
+/* Preview table centered */
 #preview table {
-  margin: 0 auto; /* horizontally centers the table */
+  margin: 0 auto;
 }
-
 
 /* Sidebar */
-
-/* Three-dot toggle */
 #sidebarToggle {
   position: fixed;
   top: 15px;
@@ -137,6 +139,7 @@ tr:hover td {
   line-height: 40px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.2);
 }
+
 .sidebar {
   width: 220px;
   background-color: #003d6e;
@@ -145,7 +148,7 @@ tr:hover td {
   padding: 20px;
   box-sizing: border-box;
   position: fixed;
-  left: -240px; /* hidden by default */
+  left: -240px;
   top: 0;
   transition: left 0.3s ease;
   z-index: 1000;
@@ -181,5 +184,3 @@ tr:hover td {
 .sidebar ul li a:hover {
   background-color: rgba(255,255,255,0.2);
 }
-
-
